@@ -15,6 +15,14 @@ namespace SortingRace
 			InsertionSort(arr);
 			RecursiveinsertSort(arr);
 			MergeSort(arr);
+			IterativeMergeSort(arr);
+		}
+
+		private static void IterativeMergeSort(int[] arr)
+		{
+			Console.WriteLine("Iterative Merge Sort");
+			var iterativeMergeSort = new IterativeMergeSort(arr);
+			PrintArr(iterativeMergeSort._solution);
 		}
 
 		private static void RecursiveinsertSort(int[] arr)
