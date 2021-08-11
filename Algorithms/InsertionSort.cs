@@ -1,4 +1,5 @@
-﻿using SortingRace.Algorithms;
+﻿using System;
+
 namespace Algorithms
 {
 	class InsertionSort : Base

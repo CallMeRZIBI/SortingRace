@@ -1,4 +1,4 @@
-﻿using SortingRace.Algorithms;
+﻿using System;
 
 namespace Algorithms
 {

@@ -1,4 +1,4 @@
-﻿namespace SortingRace.Algorithms
+﻿namespace Algorithms
 {
 	public abstract class Base
 	{
