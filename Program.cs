@@ -8,19 +8,33 @@ namespace SortingRace
 	{
 		static void Main(string[] args)
 		{
-			int[] arr = RandomNumbers(10);
+			int[] arr = RandomNumbers(50000);
+			string[] times = new string[8];
+			string[] algos = new string[]
+			{
+				"Selection Sort",
+				"Bubble Sort",
+				"Recursive Bubble Sort",
+				"Insertion Sort",
+				"Recursive Insertion Sort",
+				"Merge Sort",
+				"Interative Merge Sort",
+				"Quick sort"
+			};
 
-			SelectionSort(arr);
-			BubbleSort(arr);
-			RecursiveBubbleSort(arr);
-			InsertionSort(arr);
-			RecursiveinsertSort(arr);
-			MergeSort(arr);
-			IterativeMergeSort(arr);
-			QuickSort(arr);
+			times[0] = SelectionSort(arr);
+			times[1] = BubbleSort(arr);
+			times[2] = RecursiveBubbleSort(arr);
+			times[3] = InsertionSort(arr);
+			times[4] = RecursiveinsertSort(arr);
+			times[5] = MergeSort(arr);
+			times[6] = IterativeMergeSort(arr);
+			times[7] = QuickSort(arr);
+
+			Summary(times, algos);
 		}
 
-		private static void QuickSort(int[] arr)
+		private static string QuickSort(int[] arr)
 		{
 			Console.WriteLine("Quick sort");
 
@@ -32,9 +46,11 @@ namespace SortingRace
 
 			Console.WriteLine(" : " + stopWatch.Elapsed.ToString());
 			Console.WriteLine("");
+
+			return stopWatch.Elapsed.ToString();
 		}
 
-		private static void IterativeMergeSort(int[] arr)
+		private static string IterativeMergeSort(int[] arr)
 		{
 			Console.WriteLine("Iterative Merge Sort");
 
@@ -46,9 +62,11 @@ namespace SortingRace
 
 			Console.WriteLine(" : " + stopWatch.Elapsed.ToString());
 			Console.WriteLine("");
+
+			return stopWatch.Elapsed.ToString();
 		}
 
-		private static void RecursiveinsertSort(int[] arr)
+		private static string RecursiveinsertSort(int[] arr)
 		{
 			Console.WriteLine("Recursive Insortion sort");
 
@@ -60,9 +78,11 @@ namespace SortingRace
 
 			Console.WriteLine(" : " + stopWatch.Elapsed.ToString());
 			Console.WriteLine("");
+
+			return stopWatch.Elapsed.ToString();
 		}
 
-		private static void InsertionSort(int[] arr)
+		private static string InsertionSort(int[] arr)
 		{
 			Console.WriteLine("Insortion sort");
 
@@ -74,9 +94,11 @@ namespace SortingRace
 
 			Console.WriteLine(" : " + stopWatch.Elapsed.ToString());
 			Console.WriteLine("");
+
+			return stopWatch.Elapsed.ToString();
 		}
 
-		private static void MergeSort(int[] arr)
+		private static string MergeSort(int[] arr)
 		{
 			Console.WriteLine("Merge sort");
 
@@ -88,9 +110,11 @@ namespace SortingRace
 
 			Console.WriteLine(" : " + stopWatch.Elapsed.ToString());
 			Console.WriteLine("");
+
+			return stopWatch.Elapsed.ToString();
 		}
 
-		private static void RecursiveBubbleSort(int[] arr)
+		private static string RecursiveBubbleSort(int[] arr)
 		{
 			Console.WriteLine("Recursive Bubble sort");
 
@@ -102,9 +126,11 @@ namespace SortingRace
 
 			Console.WriteLine(" : " + stopWatch.Elapsed.ToString());
 			Console.WriteLine("");
+
+			return stopWatch.Elapsed.ToString();
 		}
 
-		private static void BubbleSort(int[] arr)
+		private static string BubbleSort(int[] arr)
 		{
 			Console.WriteLine("Bubble sort");
 
@@ -116,9 +142,11 @@ namespace SortingRace
 
 			Console.WriteLine(" : " + stopWatch.Elapsed.ToString());
 			Console.WriteLine("");
+
+			return stopWatch.Elapsed.ToString();
 		}
 
-		private static void SelectionSort(int[] arr)
+		private static string SelectionSort(int[] arr)
 		{
 			Console.WriteLine("Selection Sort");
 
@@ -130,6 +158,8 @@ namespace SortingRace
 
 			Console.WriteLine(" : " + stopWatch.Elapsed.ToString());
 			Console.WriteLine("");
+
+			return stopWatch.Elapsed.ToString();
 		}
 
 		private static int[] RandomNumbers(int HowMany)
@@ -154,6 +184,16 @@ namespace SortingRace
 				Console.Write(arr[i] + ", ");
 			}
 			Console.Write("]");
+		}
+
+		static void Summary(string[] times, string[] algos)
+		{
+			if(times.Length != algos.Length) return;
+
+			for(int i = 0; i < times.Length; i++)
+			{
+				Console.WriteLine(algos[i] + ": " + times[i]);
+			}
 		}
 	}
 }
